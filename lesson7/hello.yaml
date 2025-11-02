@@ -12,7 +12,7 @@ jobs:
     # Specifies the runner environment
     runs-on: ubuntu-latest
 
-    # Steps are individual tasks within a job!
+    # Steps are individual tasks within a job
     steps:
       # Step 1: Check out the code from the repository
       - name: Check out code
