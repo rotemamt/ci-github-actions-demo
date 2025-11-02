@@ -4,7 +4,7 @@ name: Hello CI Workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 # Jobs are the tasks that will be executed
 jobs:
