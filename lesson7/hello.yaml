@@ -1,0 +1,23 @@
+name: Hello CI Workflow
+
+# This defines when the workflow runs
+on:
+  push:
+    branches:
+      - main
+
+# Jobs are the tasks that will be executed
+jobs:
+  hello-job:
+    # Specifies the runner environment
+    runs-on: ubuntu-latest
+
+    # Steps are individual tasks within a job
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # Step 2: Run a shell command
+      - name: Print hello message
+        run: echo "Hello, CI with GitHub Actions!"
