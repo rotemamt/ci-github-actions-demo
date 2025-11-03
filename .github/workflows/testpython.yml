@@ -9,16 +9,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    steps:
-      # Step 1: Check out the code
-      - name: Check out code
-        uses: actions/checkout@v3
+    strategy: # ADD THIS
+      matrix: # ADD THIS
+        python-version: [ '3.7', '3.8', '3.9', '3.10' ]    # ADD THIS
 
-      # Step 2: Set up Python 3.9
+
+        # Step 2: Set up Python 3.9
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: ${{ matrix.python-version }}
 
       # Step 3: Install dependencies (if you have any)
       - name: Install dependencies
