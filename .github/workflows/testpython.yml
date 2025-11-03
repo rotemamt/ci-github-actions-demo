@@ -8,23 +8,21 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.7', '3.8', '3.9', '3.10']
 
-    strategy: # ADD THIS
-      matrix: # ADD THIS
-        python-version: [ '3.7', '3.8', '3.9', '3.10' ]    # ADD THIS
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
 
-
-        # Step 2: Set up Python 3.9
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
-      # Step 3: Install dependencies (if you have any)
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
+        run: python -m pip install --upgrade pip
 
-      # Step 4: Run the tests
       - name: Run tests
         run: python -m unittest test_main.py
