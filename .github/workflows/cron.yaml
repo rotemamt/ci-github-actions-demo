@@ -1,0 +1,19 @@
+name: Daily Scheduled Build
+
+on:
+  schedule:
+    # Runs daily at midnight UTC (00:00)
+    - cron: '0 0 * * *'
+  # Optional: Allow manual triggering for testing
+  workflow_dispatch:
+
+jobs:
+  scheduled-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Print success message
+        run: echo "Scheduled build completed successfully!"
