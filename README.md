@@ -36,7 +36,7 @@ It includes several workflows that automate testing, scheduling, and multi-versi
 #### **Task 4 – Matrix Builds**
 
 * Extended the test workflow to run on multiple Python versions:  
-  `3.7`, `3.8`, `3.9`, and `3.10`
+  `3.8`, `3.9`, `3.10`, and `3.11`
 * Ensures compatibility across different environments
 
 ---
