@@ -16,7 +16,7 @@ jobs:
     steps:
       # Step 1: Check out the code from the repository
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       # Step 2: Run a shell command
       - name: Print hello message
